@@ -1,0 +1,144 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    background-size: cover;
+    background-position: center;
+}
+
+.journal-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    color: #ff6f91;
+}
+
+.month-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+#current-month {
+    font-size: 24px;
+    color: #ff6f91;
+}
+
+/* Highlight the current day with a filled circle */
+/* Highlight the current day with a filled circle */
+.current-day {
+    border-radius: 50%;
+    background-color: #ff6f91;
+    color: white;
+}
+
+
+
+
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+}
+
+.day-label, .day {
+    text-align: center;
+    padding: 15px;
+}
+
+.day-label {
+    font-weight: bold;
+    color: #ff6f91;
+}
+
+.day {
+    background-color: #fce4ec;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.day:hover {
+    background-color: #ff6f91;
+    color: white;
+}
+
+#entry-form {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+#entry-form h2 {
+    font-size: 20px;
+    color: #ff6f91;
+    margin-bottom: 15px;
+}
+
+#journal-title, #journal-content, #mood {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+textarea {
+    height: 120px;
+    resize: none;
+}
+
+button {
+    background-color: #ff6f91;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #ff4a7e;
+}
+
+.mood-selector {
+    margin-bottom: 20px;
+}
+
+button {
+    margin-top: 10px;
+}
+
+#save-entry {
+    background-color: #ff6f91;
+}
+
+#save-entry:hover {
+    background-color: #ff4a7e;
+}
+
+#close-form {
+    background-color: #ccc;
+}
+
+#close-form:hover {
+    background-color: #aaa;
+}
