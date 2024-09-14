@@ -1,3 +1,4 @@
+/* Base styles */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f5f5f5;
@@ -9,7 +10,7 @@ body {
 }
 
 .journal-container {
-    max-width: 800px;
+    max-width: 800px; /* Keep the max-width for both containers consistent */
     margin: auto;
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.9);
@@ -22,49 +23,76 @@ h1 {
     color: #ff6f91;
 }
 
+/* Month navigation buttons */
 .month-navigation {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 20px 0;
+    position: relative;
+}
+
+.month-navigation button {
+    background-color: #ff6f91;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.month-navigation button:hover {
+    background-color: #ff4a7e;
+}
+
+#prev-month {
+    position: absolute;
+    left: 10px;
+}
+
+#next-month {
+    position: absolute;
+    right: 10px;
 }
 
 #current-month {
     font-size: 24px;
     color: #ff6f91;
+    margin: 0 auto;
+    position: relative;
 }
 
-/* Highlight the current day with a filled circle */
-/* Highlight the current day with a filled circle */
-.current-day {
-    border-radius: 50%;
-    background-color: #ff6f91;
-    color: white;
-}
-
-
-
-
+/* Calendar grid */
 #calendar {
+    max-width: 800px; /* Ensure the calendar width matches the form */
+    margin: auto;
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(7, minmax(40px, 1fr)); /* Use minmax to set flexible column sizes */
+    gap: 8px;
 }
 
+/* Day label (Sun, Mon, etc.) */
 .day-label, .day {
     text-align: center;
-    padding: 15px;
+    padding: 10px;
 }
 
+/* Day label style */
 .day-label {
     font-weight: bold;
     color: #ff6f91;
 }
 
+/* Calendar day square style */
 .day {
     background-color: #fce4ec;
     border-radius: 8px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+    height: 40px; /* Adjust height */
 }
 
 .day:hover {
@@ -72,15 +100,22 @@ h1 {
     color: white;
 }
 
+/* Highlight the current day */
+.current-day {
+    border-radius: 50%;
+    background-color: #ff6f91;
+    color: white;
+}
+
+/* Entry form styles */
 #entry-form {
-    margin-top: 20px;
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 800px;
-    margin: 30px auto;
+    max-width: 800px; /* Match the max-width of the form with the calendar */
+    margin: 30px auto; /* Center the form */
 }
 
 #entry-form h2 {
@@ -100,38 +135,30 @@ h1 {
 }
 
 textarea {
-    height: 120px;
+    height: 100px;
     resize: none;
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 button {
     background-color: #ff6f91;
     color: #fff;
-    padding: 10px;
+    padding: 12px;
     border: none;
     border-radius: 6px;
     cursor: pointer;
     font-size: 16px;
     margin-right: 10px;
+    margin-bottom: 10px;
+    width: 100%;
 }
 
 button:hover {
-    background-color: #ff4a7e;
-}
-
-.mood-selector {
-    margin-bottom: 20px;
-}
-
-button {
-    margin-top: 10px;
-}
-
-#save-entry {
-    background-color: #ff6f91;
-}
-
-#save-entry:hover {
     background-color: #ff4a7e;
 }
 
@@ -141,4 +168,81 @@ button {
 
 #close-form:hover {
     background-color: #aaa;
+}
+
+.mood-selector {
+    margin-bottom: 20px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .journal-container {
+        width: 100%;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+    
+    #calendar {
+        gap: 6px;
+    }
+    
+    .day {
+        padding: 8px;
+        font-size: 14px;
+        height: 30px;
+    }
+    
+    .month-navigation button {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    #journal-title, #journal-content, #mood {
+        font-size: 14px;
+    }
+    
+    textarea {
+        height: 80px;
+    }
+    
+    button {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    .month-navigation button {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    #calendar {
+        gap: 4px;
+    }
+
+    .day {
+        padding: 5px;
+        font-size: 12px;
+        height: 25px;
+    }
+
+    #entry-form h2 {
+        font-size: 18px;
+    }
+    
+    #journal-title, #journal-content, #mood {
+        font-size: 14px;
+    }
+    
+    button {
+        padding: 8px;
+        font-size: 14px;
+    }
 }
