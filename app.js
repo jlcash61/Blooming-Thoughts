@@ -22,7 +22,7 @@ function setBackgroundForMonth(monthIndex) {
     const backgroundImage = monthImages[monthIndex];
 
     if (backgroundImage) {
-        document.body.style.backgroundImage = `url('./flowers/${backgroundImage}')`;
+        document.body.style.backgroundImage = `url('/flowers/${backgroundImage}')`;
     }
 }
 
